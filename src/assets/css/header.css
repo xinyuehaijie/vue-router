@@ -1,0 +1,7 @@
+.header{ width: 90%; padding: 0 5%; height: 80px; background-color: #222; display: flex; align-items: center; justify-content: space-between}
+.header .nav-box{display: flex; align-items: center;}
+.header .nav-box .nav{ margin-left: 40px; width: 200px; display: flex; justify-content: space-between}
+.header .nav-box .nav span{ color: #fff;}
+.header .login-box{ display: flex; align-items: center;}
+.header .login-box span{ text-align: center; color: #fff !important;}
+.header .info-box{ display: flex; align-items: center; justify-content: space-between; width: 100px;}

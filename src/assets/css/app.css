@@ -1,0 +1,8 @@
+
+
+body,p,ul,h1,h2,h3{ margin: 0; padding: 0;}
+li{ list-style: none;}
+input{border:none; outline: none;}
+
+.cur{ cursor: pointer;}
+.is-active{ color: dodgerblue !important; }

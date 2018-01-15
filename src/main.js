@@ -3,7 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Util from './lib/utils'
 
+import "../src/assets/css/app.css"
+
+Vue.use(Util);
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
