@@ -10,7 +10,6 @@
 </template>
 
 <script>
-
     export default {
       name: "login",
       methods:{
@@ -20,7 +19,15 @@
               isLogin:true,
               username:name
           });
-          this.$router.push("/")
+
+          var redirect = this.$route.query.redirect;
+          if(redirect){
+            this.$router.push({
+              path:'/'+redirect
+            });
+          }else{
+            this.$router.push("/project")
+          }
         }
       }
     }

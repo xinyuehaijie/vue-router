@@ -10,7 +10,7 @@ import Layout from '@/view/layout'
 
 Vue.use(Router)
 
-export default new Router({
+var router =  new Router({
   mode:"history",
   linkActiveClass:"is-active",
   routes: [
@@ -26,10 +26,7 @@ export default new Router({
       children:[
         {
           path:"/doc",
-          component:Doc,
-          meta:{
-            login:true
-          }
+          component:Doc
         },
         {
           path:"/workbench",
@@ -40,7 +37,10 @@ export default new Router({
         },
         {
           path:"/project",
-          component:Project
+          component:Project,
+          meta:{
+            login:true
+          }
         },
       ]
     },
@@ -55,3 +55,21 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach(function(to,from,aaa){
+    var path = to.path;
+    if(to.meta.login){
+      let info = router.app.$local.fetch("miaov");
+      if(info.isLogin == undefined){
+        router.push({
+          path:"/login",
+          query:{
+            redirect:path.substr(1)
+          }
+        });
+      }
+    }
+    aaa();
+})
+
+export default router

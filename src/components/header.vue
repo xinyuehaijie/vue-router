@@ -2,7 +2,9 @@
   <div class="header">
     <div class="nav-box">
       <div class="logo">
-        <img src="../assets/miaov.png"/>
+        <router-link to="/">
+          <img src="../assets/miaov.png"/>
+        </router-link>
       </div>
       <div class="nav">
         <router-link to="/project" tag="span" class="cur">我的项目</router-link>
